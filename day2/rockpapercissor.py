@@ -2,7 +2,13 @@ score_1 = 0
 score_2 = 0
 
 def calc_score(a, b):
-  return 9 / 2 *  ((a - b) % 3) ** 2 - 15 / 2 *  ((a - b) % 3) + 3 + b + 1
+  match (a - b) % 3:
+    case 0:
+      return 3 + b + 1
+    case 1:
+      return 0 + b + 1
+    case 2:
+      return 6 + b + 1
 
 with open("day2/input") as f:
   rounds = f.readlines()
